@@ -2293,6 +2293,7 @@ function genericPrintNoParens(path: any, options: any, print: any) {
       }
 
       parts.push(n.optional ? "?" : "", path.call(print, "typeAnnotation"));
+      parts.push(";");
 
       return concat(parts);
 
