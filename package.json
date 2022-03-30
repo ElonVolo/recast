@@ -22,15 +22,35 @@
   "main": "./dist/src/main.js",
   "types": "main.d.ts",
   "scripts": {
-    "mocha": "test/run.sh",
-    "debug": "test/run.sh --inspect-brk",
-    "test": "npm run lint && npm run build && npm run mocha",
+    "test": "jest",
+    "watch": "jest --watch",
+    "snapupdate": "jest --updateSnapshot",
     "build": "npm run clean && npm run compile",
     "lint": "eslint --ext .ts .",
     "format": "prettier --write '{lib,test}/**.ts' '*rc.js'",
     "clean": "rimraf ./dist",
     "compile": "tsc -p .",
     "prepack": "npm run build"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": [
+      "./test"
+    ],
+    "testMatch": [
+      "**/test/**/*\\.[jt]s?(x)",
+      "**/run\\.[jt]s"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testPathIgnorePatterns": ["<rootDir>/test/data/"],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json",
+      "node"
+    ]
   },
   "lint-staged": {
     "*.ts": [
@@ -53,18 +73,21 @@
     "@babel/preset-env": "7.11.5",
     "@types/esprima": "4.0.2",
     "@types/glob": "7.1.3",
-    "@types/mocha": "8.0.3",
+    "@types/jest": "^27.4.1",
     "@types/node": "^16.0.0",
     "@typescript-eslint/parser": "^5.8.0",
     "eslint": "^8.5.0",
     "esprima-fb": "15001.1001.0-dev-harmony-fb",
+    "expect": "^27.5.1",
+    "jest": "^27.5.1",
+    "jest-mock": "^27.5.1",
     "flow-parser": "^0.159.0",
     "glob": "^7.1.7",
     "lint-staged": "^10.2.6",
-    "mocha": "^9.0.2",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "reify": "0.20.12",
+    "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.3.5"
   },

@@ -449,7 +449,7 @@ function testReprinting(pattern: any, description: any) {
             return;
           }
 
-          this.timeout(20000);
+          jest.setTimeout(20000);
 
           assert.strictEqual(recast.print(ast).code, source);
           const reprintedCode = recast.prettyPrint(ast).code;

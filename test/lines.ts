@@ -491,7 +491,7 @@ describe("lines", function () {
 
     fs.readFile(__filename, "utf-8", function (err, source) {
       assert.equal(err, null);
-      assert.strictEqual(fromString(source).guessTabWidth(), 4);
+      assert.strictEqual(fromString(source).guessTabWidth(), 2);
 
       fs.readFile(
         path.join(__dirname, "..", "package.json"),
