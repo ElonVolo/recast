@@ -4,7 +4,9 @@
     "lib": ["es2015"],
     "module": "commonjs",
     "declaration": true,
+    "declarationMap": true,
     "rootDir": ".",
+    "outDir": "dist",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -12,6 +14,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "importHelpers": true,
+    "sourceMap": true,
     "stripInternal": true
   },
   "exclude": [

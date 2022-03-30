@@ -5,8 +5,10 @@
 
 # Ignore TypeScript-emitted files
 *.js
+*.js.map
 *.swp
 !.*rc.js
 *.d.ts
+dist/
 # Except...
 !/types/**/*.d.ts

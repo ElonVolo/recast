@@ -19,18 +19,18 @@
     "url": "git://github.com/coderaiser/recast.git"
   },
   "license": "MIT",
-  "main": "main.js",
+  "main": "./dist/src/main.js",
   "types": "main.d.ts",
   "scripts": {
     "mocha": "test/run.sh",
     "debug": "test/run.sh --inspect-brk",
     "test": "npm run lint && npm run build && npm run mocha",
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && npm run compile",
     "lint": "eslint --ext .ts .",
     "format": "prettier --write '{lib,test}/**.ts' '*rc.js'",
-    "clean": "ts-emit-clean",
-    "prepack": "npm run build",
-    "postpack": "npm run clean"
+    "clean": "rimraf ./dist",
+    "compile": "tsc -p .",
+    "prepack": "npm run build"
   },
   "lint-staged": {
     "*.ts": [
@@ -63,8 +63,9 @@
     "lint-staged": "^10.2.6",
     "mocha": "^9.0.2",
     "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
     "reify": "0.20.12",
-    "ts-emit-clean": "1.0.0",
+    "ts-node": "^10.7.0",
     "typescript": "^4.3.5"
   },
   "engines": {
