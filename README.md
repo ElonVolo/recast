@@ -1,5 +1,7 @@
 # recast, _v_. ![CI](https://github.com/benjamn/recast/workflows/CI/badge.svg) [![Join the chat at https://gitter.im/benjamn/recast](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/benjamn/recast?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+# 📛 You better use [`@putout/printer`](https://github.com/putoutjs/printer) is much more powerful 📛
+
 1. to give (a metal object) a different form by melting it down and reshaping it.
 1. to form, fashion, or arrange again.
 1. to remodel or reconstruct (a literary work, document, sentence, etc.).
